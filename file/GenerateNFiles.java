@@ -20,9 +20,9 @@ public class GenerateNFiles {
     DateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss.SSS");
     rangeClosed(1, 10).forEach(i -> {
 	try {
-		write(get("FILE_" + df.format(new Date()) + ".txt"), content.getBytes());
+	  write(get("FILE_" + df.format(new Date()) + ".txt"), content.getBytes());
 	} catch (Exception e) {
-		System.err.println(e.getMessage());
+	  System.err.println(e.getMessage());
 	}
     });
   }
