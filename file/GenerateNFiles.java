@@ -17,13 +17,16 @@ public class GenerateNFiles {
   
   public static void main(String[] args) {
     String content = "Hello Bhaaru!";
-    DateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+    DateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss.SSS");
     rangeClosed(1, 10).forEach(i -> {
-			try {
-				write(get("FILE_" + df.format(new Date())), content.getBytes());
-			} catch (Exception e) {
-				System.err.println(e.getMessage());
-			}
-		});
+	try {
+		write(get("FILE_" + df.format(new Date()) + ".txt"), content.getBytes());
+	} catch (Exception e) {
+		System.err.println(e.getMessage());
+	}
+    });
   }
+	
 }
+	   
+	    
